@@ -1,0 +1,35 @@
+A weather dashboard with form inputs
+
+I search for a city
+    1. User enters a city in an input, concatenate text with url and api key
+    function getAPI(){
+    citySearch = document.querySelector("#someinputID").value
+    apiURL = "https://api.openweathermap.org/data/2.5/weather?q="
+    apiKey = "adfd291a73cb793a96b747e8e6006e24"
+    apiURL = apiURL.concat(citySeach, apiKey);
+
+    fetch(apiURL)
+        .then(function (response){
+            return response.json();
+        })
+        .then(function (data){
+            console.log(data);
+        });
+    };
+
+    getAPI();
+
+    present current and future conditions for that city and city to search history
+
+
+I view current weather conditions for that city
+    present the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+
+I view the UV index
+    present a color that indicates whether the conditions are favorable, moderate, or severe
+
+I view future weather conditions for that city
+    present a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+
+I click on a city in the search history
+    present current and future conditions for that city

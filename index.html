@@ -22,9 +22,12 @@
         <h1 class="header">Weather App</h1>
     </header>
 
-    <aside class="container col-12">
+    <aside class="container col-12 bg-dark text-light">
         <h1>Search for a City</h1>
-        <input type="text" id="city" placeholder="Name of city...">
+        <input type="text" id="city" name="citysearch" placeholder="Name of city...">
+        <select id="citylist">
+            
+        </select>
         <button id="submit">Submit</button>
     </aside>
 
@@ -32,7 +35,8 @@
         <div class="row">
         <h1 id="cityheader" class="col-sm"></h1>
         <h2 id="date" class="col-sm"></h2>
-        <div id="icon">
+        <div>
+            <img id="icon" class="bg-info">
         </div>
     </div>
         <br>

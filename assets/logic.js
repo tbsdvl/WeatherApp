@@ -10,6 +10,7 @@ var wind = document.querySelector("#windspeed");
 var uvi = document.querySelector("#uvi")
 var uviText = document.querySelector("#uvitext");
 var weatherType = document.querySelector("#icon");
+var cityList = document.querySelector("#citylist")
 
 function getAPI(){
 
@@ -42,10 +43,8 @@ apiURL = apiURL + citySearch + dayCount + tempUnits + apiKey;
             weatherIcon = (data["list"][0]["weather"][0]["icon"]);
             windSpeed = (data["list"][0]["wind"]["speed"]);
             wind.innerHTML = "Wind Speed: " + windSpeed + " MPH";
-            weatherImg = document.createElement("img")
-            weatherImg.setAttribute("src", "http://openweathermap.org/img/wn/" + weatherIcon + ".png");
-            weatherImg.setAttribute("alt", "Weather Icon");
-            weatherType.append(weatherImg);
+            weatherType.setAttribute("src", "http://openweathermap.org/img/wn/" + weatherIcon + ".png");
+            weatherType.setAttribute("alt", "Weather Icon");
 
 
             // get temp + humidity
@@ -76,8 +75,23 @@ apiURL = apiURL + citySearch + dayCount + tempUnits + apiKey;
         });
 };
 
+// Get API info with submit button
+// Add input city value to an array
 var submitCity = document.querySelector("#submit");
-submitCity.addEventListener("click", function(){
+var cityArray = [];
+submitCity.addEventListener("click", function(event){
+    event.preventDefault();
     getAPI();
+    var citySearch = document.querySelector("#city").value;
+    cityArray.push(citySearch);
+    if(cityArray.length = 1){
+        for(i = 0; i <= cityArray.length; i++){
+        var newCity = document.createElement("option");
+        newCity.innerHTML = cityArray;
+        cityArray.pop(i);
+        cityList.append(newCity);
+        console.log(newCity);
+        };
+    };
 });
 

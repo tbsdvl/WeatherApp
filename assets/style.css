@@ -8,3 +8,12 @@
 aside {
     width: 30%;
 }
+
+.uvi {
+    text-align: center;
+    width: 25%;
+}
+
+.col-10 {
+    max-width: 15%;
+}

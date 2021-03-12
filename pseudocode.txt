@@ -40,3 +40,15 @@ I view future weather conditions for that city
 
 I click on a city in the search history
     present current and future conditions for that city
+
+    var dailyForecast = document.createElement("div");
+    var forecastIcon = document.createElement("img)
+    forecastIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + weatherIcon + ".png");
+    forecastIcon.setAttribute("alt", "weather icon");
+
+    for(i = 0; i <= 5; i++){
+        dailyForecast.append(currentDate);
+        dailyForecast.append(forecastIcon);
+        dailyForecast.append(temperature);
+        dailyForecast.append(humidity);
+    };

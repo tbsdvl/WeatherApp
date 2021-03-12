@@ -9,4 +9,4 @@ The application will add the input location to the selector element as an option
 ![WeatherAppEx](https://github.com/tbsdvl/WeatherApp/blob/main/weatherapp.gif)
 
 Link to application:
-![link](https://tbsdvl.github.io/WeatherApp/)
+[link](https://tbsdvl.github.io/WeatherApp/)

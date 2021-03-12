@@ -22,6 +22,14 @@ function getAPI() {
   apiURL = apiURL + citySearch + dayCount + tempUnits + apiKey;
 
   fetch(apiURL)
+
+    .then(function (response){
+        console.log(response)
+        if(response.status === 400){
+            response.textContent = response.status
+        }
+        return response.json();
+    })
     .then(function (response) {
       return response.json();
     })

@@ -114,6 +114,7 @@ function getAPI() {
                   "class",
                   "col-sm bg-primary text-light justify-content-evenly"
                 );
+                forecastBox.setAttribute("id", "forecastbox");
                 forecastImg.setAttribute(
                   "src",
                   "http://openweathermap.org/img/wn/" + dailyIcon + ".png"
@@ -134,7 +135,7 @@ function getAPI() {
                   forecastTemp,
                   forecastHumidity
                 );
-                dailyForecast.append(forecastBox);
+                dailyForecast.appendChild(forecastBox);
               }
             });
         });
@@ -175,4 +176,5 @@ submitCity.addEventListener("click", function (event) {
       console.log(newCity);
     }
   }
+  dailyForecast.replaceChildren();
 });

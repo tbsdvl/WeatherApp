@@ -90,9 +90,27 @@ function getAPI() {
               var humidity = data["current"]["humidity"];
               humid.innerHTML = "Humidity: " + humidity + "%";
 
-              // get UV index
+              // get UV index and set styles according to uvi values
               var uvIndex = data["current"]["uvi"];
+              if(uvIndex <= 1){
+                uvi.setAttribute("class", "bg-primary text-light");
+                uvi.innerHTML = "UV Index: " + uvIndex;
+              }else if(2 < uvIndex <= 3){
+              uvi.setAttribute("class", "bg-success text-light");
               uvi.innerHTML = "UV Index: " + uvIndex;
+              }else if(3 < uvIndex <= 4){
+                uvi.setAttribute("class", "bg-warning text-light");
+                uvi.innerHTML = "UV Index: " + uvIndex;
+              }else if(5 < uvIndex <= 6){
+                uvi.setAttribute("class", "bg-orange text-light");
+                uvi.innerHTML = "UV Index: " + uvIndex;
+              }else if(8 < uvIndex <= 9){
+                uvi.setAttribute("class", "bg-danger text-light");
+              uvi.innerHTML = "UV Index: " + uvIndex;
+              }else if(10 < uvINdex <= 15){
+                uvi.setAttribute("class", "bg-info text-light");
+              uvi.innerHTML = "UV Index: " + uvIndex;
+              }
 
               // Create and fill 5 day forecast on html document
               for (i = 0; i <= 4; i++) {

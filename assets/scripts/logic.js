@@ -33,11 +33,7 @@ function getAPI() {
       if (response.status === 400) {
         response.textContent = response.status;
       }
-      return response.json();
-    })
-
-    // if there is a successful api call, return the response in json format
-    .then(function (response) {
+       // if there is a successful api call, return the response in json format
       return response.json();
     })
     .then(function (data) {
